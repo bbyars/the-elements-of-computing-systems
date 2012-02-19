@@ -2,7 +2,7 @@
 // "The Elements of Computing Systems" by Nisan and Schocken, 
 // MIT Press. Book site: www.idc.ac.il/tecs
 // File name: projects/01/Or.hdl
-
+
 /**
  * Or gate: out = 1 if {a==1 or b==1}, 0 otherwise  
  */
@@ -12,5 +12,7 @@ CHIP Or {
     OUT out;
 
     PARTS:
-    // Put your code here.
+    Not(in=a, out=nota);
+    Not(in=b, out=notb);
+    Nand(a=nota, b=notb, out=out);
 }
